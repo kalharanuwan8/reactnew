@@ -1,0 +1,72 @@
+/* Ensure that html and body take up full height */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the container covers full viewport height */
+    background-color: #add8e6; /* Light blue background */
+    width: 1500px;
+  }
+  
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Align items to the left */
+    background-color: #f3ebff; /* Light gray background */
+    padding: 10px 0;
+    gap: 15px; /* Adds space between the user greeting and the buttons */
+  }
+  
+  .user-greeting {
+    padding-left: 20px;
+    font-size: 18px;
+    color: #9370db; /* Purple text color */
+  }
+  
+  .nav-buttons {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    align-items: center;
+  }
+  
+  .nav-button {
+    background-color: #ffa500; /* Orange background */
+    color: #ffffff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+  }
+  
+  .nav-button:hover {
+    background-color: #ff8c00; /* Darker orange on hover */
+  }
+  
+  .home-btn {
+    background-color: #ff4500; /* Red for SOS button */
+  }
+  
+  .sos-btn:hover {
+    background-color: #d73300; /* Darker red on hover */
+  }
+  
+  .content-area {
+    flex-grow: 1;
+    background-color: #add8e6; /* Light blue background for the content */
+    padding: 20px;
+    height: 100%; /* Ensure it fills remaining space */
+  }
+  
+  /* Additional adjustments for buttons' text overflow */
+  .nav-button {
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  

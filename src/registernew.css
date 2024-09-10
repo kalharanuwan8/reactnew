@@ -1,0 +1,106 @@
+/* Container styling */
+.homepage-container {
+    background-color: rgb(125, 218, 237);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Navbar styling */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(186, 227, 225);
+    padding: 10px 0;
+}
+
+.nav-button {
+    width: 16.66%;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    background-color: #e0e0e0;
+    margin: 0 5px;
+}
+
+.orange-button {
+    background-color: #ffa726;
+}
+
+/* Updated: Button container for passenger/driver buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%; /* Ensure buttons stretch evenly */
+}
+
+.register-toggle {
+    padding: 15px 20px;
+    margin: 0 10px;
+    background-color: #ffa726;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.register-toggle.active {
+    background-color: #fb8c00; /* Active state color */
+}
+
+.register-toggle:hover {
+    background-color: #e07b39; /* Hover state */
+}
+
+/* Form styling */
+.form-container {
+    margin-top: 30px;
+    width: 60%; /* Adjust based on your preference */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.register-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.register-button:hover {
+    background-color: #1565c0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-container {
+        width: 100%; /* Full width on small screens */
+        padding: 15px;
+    }
+}

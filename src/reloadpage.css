@@ -1,89 +1,182 @@
 .homepage-container {
-    background-color: rgb(125, 218, 237); /* Background color */
-    min-height: 100vh; /* Full viewport height */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    padding: 20px; /* Padding */
-    width: 1500px;
-  }
-  
-  .navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgb(186, 227, 225); /* Navbar background color */
-    padding: 10px 0;
-  }
-  
+  background-color: rgb(125, 218, 237); /* Background color */
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 20px; /* Padding */
+  width: 100%; /* Full width */
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(186, 227, 225); /* Navbar background color */
+  padding: 10px 0;
+}
+
+.nav-button {
+  width: 20%;
+  height: 70px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.orange-button {
+  background-color: #ffa726; /* Home button color */
+}
+
+.content {
+  width: 60%; /* Adjust as needed */
+  margin-top: 20px;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 70%; /* Adjust as needed */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.balance {
+  width: 20%; /* Adjust as needed */
+  text-align: right;
+  font-weight: bold;
+  background-color: #e0e0e0;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-button {
+  background-color: #ffa726;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 150px;
+}
+
+.reload-button {
+  background-color: #1e88e5;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #fff;
+  align-self: self-end;
+}
+
+/* ---------- Responsive Adjustments ---------- */
+
+/* For screens larger than 1024px */
+@media (max-width: 1024px) {
   .nav-button {
-    width: 16.66%; /* Equal width for buttons */
-    height: 50px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-    background-color: #e0e0e0; /* Button background color */
-    margin: 0 5px;
+      width: 25%; /* Slightly wider for smaller laptops and large tablets */
   }
-  
-  .orange-button {
-    background-color: #ffa726; /* Home button color */
-  }
-  
+
   .content {
-    width: 60%; /* Adjust as needed */
-    margin-top: 20px;
+      width: 80%; /* Widen the content section */
   }
-  
-  .input-group {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+
+  .input-field, .balance {
+      width: 100%; /* Full width input fields for large tablets */
   }
-  
-  .input-field {
-    width: 70%; /* Adjust as needed */
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .balance {
-    width: 20%; /* Adjust as needed */
-    text-align: right;
-    font-weight: bold;
-    background-color: #e0e0e0;
-  }
-  
+
   .button-group {
-    display: flex;
-    justify-content: space-between;
-    
+      flex-direction: column;
+      align-items: center;
   }
-  
-  .action-button {
-    background-color: #ffa726;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-right: 10px;
-    width: 150px;
+
+  .action-button, .reload-button {
+      width: 90%; /* Full width buttons for better touch interaction */
+      margin: 10px 0;
   }
-  
-  .reload-button {
-    background-color: #1e88e5;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    color: #fff;
-    align-self: self-end;
+}
+
+/* For tablet screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column; /* Stack navbar items vertically */
+      padding: 20px;
   }
-  
+
+  .nav-button {
+      width: 90%; /* Full width buttons for better touch interaction */
+      margin-bottom: 10px;
+  }
+
+  .content {
+      width: 90%; /* Nearly full width for tablets */
+  }
+
+  .input-group {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .input-field, .balance {
+      width: 100%; /* Full width input fields */
+      margin-bottom: 10px;
+  }
+
+  .button-group {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .action-button, .reload-button {
+      width: 90%; /* Full width buttons */
+      margin-bottom: 10px;
+  }
+}
+
+/* For mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .nav-button {
+      width: 100%; /* Full width buttons */
+      font-size: 14px; /* Smaller font for mobile */
+  }
+
+  .content {
+      width: 100%; /* Full width content */
+  }
+
+  .input-group {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .input-field, .balance {
+      width: 100%; /* Full width input fields */
+  }
+
+  .button-group {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .action-button, .reload-button {
+      width: 100%; /* Full width buttons */
+  }
+}

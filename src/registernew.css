@@ -1,4 +1,4 @@
-/* Container styling */
+/* General Styles for Homepage */
 .homepage-container {
     background-color: rgb(125, 218, 237);
     min-height: 100vh;
@@ -6,9 +6,12 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    font-family: 'Arial', sans-serif; 
+    margin-left: 250px; /* Avoids overlap with the fixed sidebar */
+    width: calc(100% - 250px); /* Ensures the container takes up the full width minus the sidebar */
 }
 
-/* Navbar styling */
+/* Navbar */
 .navbar {
     width: 100%;
     display: flex;
@@ -16,32 +19,57 @@
     align-items: center;
     background-color: rgb(186, 227, 225);
     padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Navigation Button Styles */
+.nav-button:hover {
+    background-color: #ff8c00; /* Darker orange on hover */
+}
+
+.home-btn {
+    background-color: #ff4500; /* Red for Home button */
+}
+
+.sos-btn {
+    background-color: #ff4500; /* Red for SOS button */
+}
+
+.sos-btn:hover {
+    background-color: #d73300; /* Darker red on hover */
+}
+
+.route-btn {
+    background-color: #4682b4; /* Blue for Route Details */
+}
+
+.route-btn:hover {
+    background-color: #4169e1; /* Darker blue on hover */
 }
 
 .nav-button {
-    width: 16.66%;
-    height: 50px;
+    width: 20%;
+    height: 70px;
     border: none;
     cursor: pointer;
     font-size: 16px;
     text-align: center;
-    background-color: #e0e0e0;
     margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.orange-button {
-    background-color: #ffa726;
-}
-
-/* Updated: Button container for passenger/driver buttons */
+/* Button Container */
 .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    width: 100%; /* Ensure buttons stretch evenly */
+    width: 100%;
 }
 
+/* Register Toggle Button */
 .register-toggle {
     padding: 15px 20px;
     margin: 0 10px;
@@ -51,25 +79,33 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .register-toggle.active {
-    background-color: #fb8c00; /* Active state color */
+    background-color: #fb8c00;
 }
 
 .register-toggle:hover {
-    background-color: #e07b39; /* Hover state */
+    background-color: #e07b39;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Form styling */
+/* Form Styling */
 .form-container {
     margin-top: 30px;
-    width: 60%; /* Adjust based on your preference */
+    width: 60%;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.form-container:hover {
+    transform: scale(1.02);
 }
 
 .input-field {
@@ -80,6 +116,13 @@
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #1e88e5;
+    outline: none;
+    box-shadow: 0 0 6px rgba(30, 136, 229, 0.3);
 }
 
 .register-button {
@@ -91,16 +134,162 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .register-button:hover {
     background-color: #1565c0;
+    transform: scale(1.03);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #68a4ff;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: -300px; /* Initially hidden */
+    z-index: 1;
+    transition: left 0.3s ease, background-color 0.3s ease; /* Slide-in effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.visible {
+    left: 0; /* Slide in when visible */
+    background-color: #5595e6; /* Darker tone when visible */
+}
+
+/* Sidebar Elements */
+.logo-section {
+    text-align: center;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: rotate(5deg); /* Fun hover effect */
+}
+
+.admin-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.profile-image {
+    width: 60px;
+    height: 60px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.user-info {
+    font-size: 14px;
+    color: white;
+}
+
+.user-info p {
+    margin: 2px 0;
+}
+
+.menu-items {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.menu-item {
+    background-color: #f0d9b5;
+    color: black;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-item:hover {
+    background-color: #c9a67c;
+    transform: scale(1.05);
+}
+
+.menu-item.logout {
+    background-color: #f29c9c;
+}
+
+.menu-item.logout:hover {
+    background-color: #f25454;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close-button:hover {
+    transform: rotate(90deg);
+}
+
+/* ---------- Responsive Adjustments ---------- */
+
+/* For screens larger than 1024px */
+@media (max-width: 1024px) {
+    .nav-button {
+        width: 25%; /* Slightly wider for smaller laptops and large tablets */
+    }
+
     .form-container {
-        width: 100%; /* Full width on small screens */
-        padding: 15px;
+        width: 80%; /* Widen the form container */
+    }
+}
+
+/* For tablet screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        padding: 20px;
+    }
+
+    .nav-button {
+        width: 90%; /* Full width buttons for better touch interaction */
+        margin-bottom: 10px;
+    }
+
+    .form-container {
+        width: 90%; /* Nearly full width for tablets */
+    }
+}
+
+/* For mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .nav-button {
+        width: 100%; /* Full width buttons */
+        font-size: 14px; /* Smaller font for mobile */
+    }
+
+    .form-container {
+        width: 100%; /* Full width form container for mobile */
+    }
+
+    .register-toggle, .register-button {
+        width: 100%; /* Buttons take full width */
+        font-size: 14px; /* Adjust font size for smaller screens */
     }
 }

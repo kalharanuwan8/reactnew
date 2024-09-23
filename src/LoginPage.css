@@ -3,87 +3,87 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: 'Arial', sans-serif;
     background-color: #f2f2f2;
-  }
-  
-  /* Login Page Container */
-  .login-page {
+}
+
+/* Login Page Container */
+.login-page {
     display: flex;
     height: 100vh;
-  }
-  
-  /* Left Section Styling */
-  .left-section {
+}
+
+/* Left Section Styling */
+.left-section {
     background-color: #ff9e49; /* Orange color */
-    width: 40%;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
     padding: 20px;
-  }
-  
-  .logo {
+}
+
+.logo {
     max-width: 100px; /* Adjust the size as necessary */
     margin-bottom: 20px;
-  }
-  
-  .login-title {
+}
+
+.login-title {
     font-size: 2rem;
     font-weight: bold;
-  }
-  
-  .welcome-text {
+}
+
+.welcome-text {
     font-size: 1.2rem;
     margin-top: 10px;
-  }
-  
-  /* Right Section Styling */
-  .right-section {
+}
+
+/* Right Section Styling */
+.right-section {
     background-color: white;
-    width: 60%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
+    justify-content: flex-start;
+    padding: 50px;
     position: relative;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-  }
-  
-  /* Login Form Styling */
-  .login-form {
+    width: 1500px;
+}
+
+/* Login Form Styling */
+.login-form {
     width: 80%;
     max-width: 400px;
     display: flex;
     flex-direction: column;
-  }
-  
-  .input-field {
+}
+
+.input-field {
     margin-bottom: 20px;
     padding: 15px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  .forgot-password {
+}
+
+.forgot-password {
     text-align: right;
     margin-bottom: 20px;
     color: #3f51b5;
     text-decoration: none;
-  }
-  
-  .forgot-password:hover {
+}
+
+.forgot-password:hover {
     text-decoration: underline;
-  }
-  
-  .login-button {
+}
+
+.login-button {
     padding: 15px;
     background-color: #ff9e49;
     color: white;
@@ -91,9 +91,90 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-  }
-  
-  .login-button:hover {
+}
+
+.login-button:hover {
     background-color: #ff8c00;
-  }
-  
+}
+
+/* ---------- Responsive Adjustments ---------- */
+
+/* For screens smaller than 1024px (large tablets, smaller laptops) */
+@media (max-width: 1024px) {
+    .left-section {
+        width: 35%; /* Adjust left section width */
+    }
+
+    .right-section {
+        width: 65%; /* Adjust right section width */
+    }
+
+    .login-title {
+        font-size: 1.8rem; /* Slightly smaller title font */
+    }
+
+    .input-field {
+        font-size: 0.9rem; /* Slightly smaller input fields */
+    }
+
+    .login-button {
+        padding: 12px; /* Slightly smaller button */
+        font-size: 0.9rem;
+    }
+}
+
+/* For screens smaller than 768px (tablets and mid-sized screens) */
+@media (max-width: 768px) {
+    .login-page {
+        flex-direction: column; /* Stack the sections vertically */
+    }
+
+    .left-section, .right-section {
+        width: 100%; /* Full width for both sections */
+        border-radius: 0; /* Remove the border-radius on small screens */
+    }
+
+    .login-title {
+        font-size: 1.6rem; /* Smaller title font for tablets */
+    }
+
+    .input-field {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .login-button {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* For screens smaller than 480px (mobile screens) */
+@media (max-width: 480px) {
+    .left-section {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .login-title {
+        font-size: 1.4rem; /* Smaller title font for mobiles */
+    }
+
+    .welcome-text {
+        font-size: 1rem; /* Smaller welcome text */
+    }
+
+    .input-field {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .forgot-password {
+        font-size: 0.8rem;
+    }
+
+    .login-button {
+        width: 100%; /* Full width button */
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+}

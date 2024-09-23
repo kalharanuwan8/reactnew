@@ -1,101 +1,262 @@
 /* General Styling */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .sos-page-container {
-    background-color: #e0f7fa; /* Light blue background for the whole page */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .navbar {
-    width: 100%;
-    display: flex;
-    background-color: #ffffff;
-    padding: 10px 20px;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .nav-item {
-    margin-right: auto;
-  }
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.sos-page-container {
+  background-color: #46e0f4; /* Light blue background for the whole page */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #f3ebff; /* Light gray background */
+  padding: 10px;
+  gap: 15px; /* Adds space between the user greeting and the buttons */
+  width: 100%; /* Full width of the viewport */
+}
+
+.user-greeting {
+  padding-left: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #9370db; /* Purple text color */
+}
+
+.nav-button {
+  width: 15%; /* Button width to fit on screen */
+  height: 70px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: #ff8c00; /* Darker orange on hover */
+}
+
+.home-btn, .sos-btn {
+  background-color: #ff4500; /* Red for Home button */
+}
+
+.sos-btn:hover {
+  background-color: #d73300; /* Darker red on hover */
+}
+
+.route-btn {
+  background-color: #4682b4; /* Blue for Route Details */
+}
+
+.route-btn:hover {
+  background-color: #4169e1; /* Darker blue on hover */
+}
+
+.orange-button {
+  background-color: #ffa726;
+  color: white;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  width: 100%; /* Full width of the viewport */
+  flex-grow: 1;
+}
+
+.sos-section {
+  background-color: #769be6;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 65%; /* Main content takes most of the width */
+  height: 100%; /* Full height of the parent */
+  margin-right: 20px;
+}
+
+.sos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.sos-table th, .sos-table td {
+  border: 1px solid #3c66be;
+  padding: 8px;
+  text-align: left;
+}
+
+.sos-table th {
+  background-color: #4165ad;
+}
+
+.track-user-section {
+  background-color: #9d4f4f;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  height: 100%; /* Full height to match SOS section */
+  text-align: center;
+}
+
+.user-input {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.track-button {
+  background-color: #4d90fe;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #68a4ff; /* Light blue background */
+  padding: 20px;
+  height: 100vh; /* Full height for sidebar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+}
+
+.logo-section {
+  text-align: center;
+}
+
+.logo {
+  width: 80px; /* Logo size */
+  margin-bottom: 10px;
+}
+
+.admin-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc; /* Placeholder color */
+  border-radius: 50%;
+  margin: 10px auto;
+}
+
+.user-info {
+  font-size: 14px;
+  color: white;
+}
+
+.user-info p {
+  margin: 2px 0;
+}
+
+.menu-items {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.menu-item {
+  background-color: #f0d9b5; /* Button background color */
+  color: black;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.menu-item.logout {
+  background-color: #f29c9c; /* Red background for logout */
+}
+
+.menu-item:hover {
+  background-color: #c9a67c; /* Hover effect */
+}
+
+/* Responsive Adjustments */
+
+/* For screens smaller than 1024px */
+@media (max-width: 1024px) {
   .nav-button {
-    background-color: #f0f0f0;
-    border: none;
-    margin: 0 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 14px;
+      width: 20%;
   }
-  
-  .orange-button {
-    background-color: #ffa726;
-    color: white;
-  }
-  
-  .main-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    width: 90%; /* Adjust the width as needed */
-    max-width: 1200px; /* Max width for large screens */
-  }
-  
+
   .sos-section {
-    background-color: #ffffff;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 60%;
-    margin-right: 20px;
+      width: 60%;
   }
-  
-  .sos-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .sos-table th, .sos-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .sos-table th {
-    background-color: #f2f2f2;
-  }
-  
+
   .track-user-section {
-    background-color: #ffffff;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    text-align: center;
+      width: 35%;
   }
-  
-  .user-input {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 10px;
+}
+
+/* For tablets or screens smaller than 768px */
+@media (max-width: 768px) {
+  .nav-bar {
+      flex-direction: column;
+      align-items: center;
   }
-  
+
+  .nav-button {
+      width: 80%;
+      margin-bottom: 10px;
+  }
+
+  .main-content {
+      flex-direction: column;
+      align-items: center;
+      width: 100%; /* Full width on smaller screens */
+  }
+
+  .sos-section, .track-user-section {
+      width: 90%;
+      height: auto; /* Adjust height for small screens */
+  }
+}
+
+/* For mobile screens smaller than 480px */
+@media (max-width: 480px) {
+  .nav-button {
+      font-size: 14px;
+  }
+
+  .user-greeting {
+      font-size: 16px;
+  }
+
   .track-button {
-    background-color: #4d90fe;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+      width: 100%;
   }
-  
+}

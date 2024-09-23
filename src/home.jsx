@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './homepage.css';
+import './sidebar.css'
 
 function Homepage() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -67,11 +68,11 @@ function Homepage() {
        </div>
      
        <div className="menu-items">
-         <Link to = "/myprofile" className="menu-item">User Management</Link>
-         <button className="menu-item">Bus and Route Management</button>
+         <button className="menu-item">User Management</button>
+         <Link to = "/busmanagement" className='menu-item'>Bus and Route Management</Link>
          <button className="menu-item">Notification Management</button>
          <button className="menu-item">Refund Management</button>
-         <button className="menu-item">Settings</button>
+         <Link to = "/myprofile" className="menu-item">Settings</Link>
          <button className="menu-item logout">Log Out</button>
        </div>
        

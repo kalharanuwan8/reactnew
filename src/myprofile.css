@@ -6,28 +6,57 @@
     justify-content: space-between;
     align-items: flex-start; /* Align to the top */
     padding: 20px;
+    max-height: 80vh;
+    height: 100%;
 }
 
+
 .leftside {
-    background-color: #333; /* Sidebar background color */
-    width: 200px; /* Fixed width for the sidebar */ 
-    padding: 10px;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 10px; /* Space between buttons */
-    height: 60vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 30%;
+    height:60vh;
+    background-color: black;
+    
 }
 
 .Settings {
-    display: flex;
-    background-color: #000; /* Button background color */
-    color: #fff;    
-    border: none;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white; /* Default button text color */
+    background-color: black; /* Default button background */
+    border-radius: 0%;
+    outline: none;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    height: 100%;
     width: 100%;
 }
 
+.Settings:hover {
+    background-color: #95b9d8; /* Color after button is clicked */
+    color: black; /* Text color after click */
+    border: none; /* Text color on hover */
+    font-size: 25px;
+    transition: 0.15s;
+}
+
+.Settings:active, .Settings.selected {
+    background-color: #95b9d8; /* Color after button is clicked */
+    color: black; /* Text color after click */
+    border: none;
+}
+
+.Settings::after
+{
+    background-color: #95b9d8; /* Color after button is clicked */
+    color: black; /* Text color after click */
+    border: none;
+}
 .rightside {
     flex-grow: 1; /* Takes up remaining width */ /* Add space between sidebar and form */
     background-color: #95b9d8; /* Background color for the form container */
@@ -76,4 +105,12 @@
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 5px;
+}
+.security-button{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+    background-color: #154d7d;
+    border-radius: 20px;
 }

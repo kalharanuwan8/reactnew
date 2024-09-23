@@ -7,6 +7,7 @@ import Sos from './sos';
 import WalletReloadPage from './reloadpage';
 import EditUserDetails from './editinfo';
 import MyProfile from './myprofile';
+import BusManagement from './busmanagement';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/homepage" element ={<Homepage/>}/>
           <Route path="/register" element={<Registernew />} />
           <Route path="/sos" element={<Sos />} />
+          <Route path="/busmanagement" element={<BusManagement/>}/>
           <Route path="/reload" element={<WalletReloadPage />} />
           <Route path="/editinfo" element={<EditUserDetails />} />
           <Route path="/myprofile" element={<MyProfile />} />

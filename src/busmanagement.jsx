@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
-import './Registernew.css';
-import './sidebar.css';
 import { Link } from 'react-router-dom';
+import './sidebar.css';
+import './bus.css';
 
-function Registernew() {
+
+function BusManagement() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
-  const [isPassenger, setIsPassenger] = useState(true);  // Initialize isPassenger state
+
+  // Declare routes outside of the function so it is available in the return JSX
+  const routes = [
+    { route: 'Route 1', driver: 'A B C Kumara', bus: 'ABC 1234' },
+    { route: 'Route 2', driver: 'A B C Kumara', bus: 'ABC 1234' },
+    { route: 'Route 3', driver: 'A B C Kumara', bus: 'ABC 1234' },
+    { route: 'Route 4', driver: 'A B C Kumara', bus: 'ABC 1234' },
+    { route: 'Route 5', driver: 'A B C Kumara', bus: 'ABC 1234' },
+  ];
 
   const handleToggleClick = () => {
     setIsSidebarVisible(prevState => !prevState);
-  };
-
-  const handlePassengerClick = () => {
-    setIsPassenger(true);  // Switch to Passenger registration
-  };
-
-  const handleDriverClick = () => {
-    setIsPassenger(false);  // Switch to Driver registration
   };
 
   return (
@@ -35,7 +36,6 @@ function Registernew() {
         </div>
 
         <div className="nav-buttons">
-        {/* Link the buttons to their respective paths */}
           <Link to="/homepage" className="nav-button home-btn">Home</Link>
           <Link to="/register" className="nav-button register-btn">Register New Passenger/Driver</Link>
           <Link to="/homepage" className="nav-button route-btn">Route Details</Link>
@@ -44,54 +44,51 @@ function Registernew() {
         </div>
       </div>
 
-      {/* Updated: Single button container for both passenger and driver */}
-      <div className="button-container">
-        <button
-          className={`register-toggle ${isPassenger ? 'active' : ''}`}
-          onClick={handlePassengerClick}
-        >
-          Register as Passenger
-        </button>
-        <button
-          className={`register-toggle ${!isPassenger ? 'active' : ''}`}
-          onClick={handleDriverClick}
-        >
-          Register as Driver
-        </button>
-      </div>
-
-      {/* Form Section */}
-      <div className="form-container">
-        <input type="text" placeholder="Full Name" className="input-field" />
-        <input type="email" placeholder="Email" className="input-field" />
-        <input type="text" placeholder="Student / Staff ID" className="input-field" />
-        <input type="text" placeholder="Contact No." className="input-field" />
-
-        {isPassenger ? (
-          <>
-            <input type="text" placeholder="Guardian's Contact No." className="input-field" />
-            <button className="register-button">Register as Passenger</button>
-          </>
-        ) : (
-          <>
-            <input type="password" placeholder="Password" className="input-field" />
-            <input type="password" placeholder="Confirm Password" className="input-field" />
-            <button className="register-button">Register as Driver</button>
-          </>
-        )}
+      <div className="route-management-container">
+        <h2>Bus & Route Management</h2>
+        <table className="route-table">
+          <thead>
+            <tr>
+              <th>Route Name</th>
+              <th>Driver Name</th>
+              <th>Bus Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            {routes.map((route, index) => (
+              <tr key={index}>
+                <td>{route.route}</td>
+                <td>
+                  {route.driver}
+                  <select className="driver-dropdown">
+                    <option value="A B C Kumara">A B C Kumara</option>
+                    <option value="D E F Kumara">D E F Kumara</option>
+                  </select>
+                </td>
+                <td>
+                  {route.bus}
+                  <select className="bus-dropdown">
+                    <option value="ABC 1234">ABC 1234</option>
+                    <option value="XYZ 5678">XYZ 5678</option>
+                  </select>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
       {/* Sidebar: Conditional rendering based on state */}
       {isSidebarVisible && (
-        <div className="sidebar visible">
+        <div className={`sidebar ${isSidebarVisible ? 'visible' : ''}`}>
           <button className="close-button" onClick={handleToggleClick}>×</button> {/* Close button */}
-
+          
           <div className="logo-section">
             <img src="logo.png" alt="E-Shuttle Logo" className="logo" />
             <h3>E-Shuttle</h3>
             <p>Journey for Comfort</p>
           </div>
-
+          
           <div className="admin-section">
             <h4>Admin Portal</h4>
             <div className="profile-image">
@@ -108,7 +105,7 @@ function Registernew() {
             <button className="menu-item">Bus and Route Management</button>
             <button className="menu-item">Notification Management</button>
             <button className="menu-item">Refund Management</button>
-            <button className="menu-item">Settings</button>
+            <Link to="/myprofile" className="menu-item">Settings</Link>
             <button className="menu-item logout">Log Out</button>
           </div>
         </div>
@@ -117,4 +114,4 @@ function Registernew() {
   );
 }
 
-export default Registernew;
+export default BusManagement;

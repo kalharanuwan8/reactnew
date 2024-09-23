@@ -1,0 +1,54 @@
+.route-management-container {
+    background-color: #e6f2ff; /* Light blue background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .route-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .route-table th, .route-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .route-table th {
+    background-color: #ffa500; /* Orange for headers */
+    color: white;
+  }
+  
+  .route-table td {
+    background-color: #408bdc; /* Light blue for table body */
+  }
+  
+  .edit-btn {
+    background-color: #ffeb3b; /* Yellow button */
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .edit-btn:hover {
+    background-color: #f0c419; /* Darker yellow on hover */
+  }
+  
+  .driver-dropdown, .bus-dropdown {
+    margin-left: 10px;
+    padding: 5px;
+  }
+  
+  

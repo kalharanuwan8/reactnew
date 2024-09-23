@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; // Import useState
 import './reloadpage.css';
+import './sidebar.css';
 import { Link } from 'react-router-dom';
 
 const WalletReloadPage = () => {

@@ -1,155 +1,203 @@
+/* Sidebar Styles */
 .sidebar {
-    width: 250px;
-    background-color: #68a4ff; /* Light blue background */
-    padding: 20px;
-    max-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    overflow-y: auto;
-    align-self: flex-start;
-  }
-  
-  .logo-section {
-    text-align: center;
-  }
-  
-  .logo {
-    width: 80px; /* Logo size */
-    margin-bottom: 10px;
-  }
-  
-  .admin-section {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .profile-image {
-    width: 60px;
-    height: 60px;
-    background-color: #ccc; /* Placeholder color */
-    border-radius: 50%;
-    margin: 10px auto;
-  }
-  
-  .user-info {
-    font-size: 14px;
-    color: white;
-  }
-  
-  .user-info p {
-    margin: 2px 0;
-  }
-  
-  .menu-items {
-    margin-top: 20px;
-    width: 100%;
-  }
-  
-  .menu-item {
-    background-color: #f0d9b5; /* Button background color */
-    color: black;
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    text-align: center; /* Ensures text is centered in the link */
-    text-decoration: none; /* Removes underline from links */
-    display: block; /* Ensures links take full width like buttons */
-    box-sizing: border-box; /* Ensures padding doesn't overflow */
-  }
-  
-  .menu-item.logout {
-    background-color: #f29c9c; /* Red background for logout */
-    
-  }
-  
-  .menu-item:hover {
-    background-color: #c9a67c; /* Hover effect */
-  }
-  .close-button {
-    position: fixed; /* Keeps the button floating */
-    top: 20px; /* Adjust to where you want the button */
-    left: 180px; /* Aligns it to the right of the screen */
-    background-color: #161212; /* Button background color */
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 10px 15px;
-    font-size: 18px;
-    cursor: pointer;
-    z-index: 2000; /* Ensure the button is above all other elements */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-    transition: background-color 0.3s;
-    align-self: flex-start;
+  width: 250px;
+  background-color: #3f85dc; /* Light blue background */
+  padding: 20px;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  overflow-y: auto;
+  align-self: flex-start; 
+  transition: 1ms;
+}
+
+.logo-section {
+  text-align: center;
+}
+
+.logo {
+  width: 80px; /* Logo size */
+  margin-bottom: 10px;
+}
+
+.admin-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc; /* Placeholder color */
+  border-radius: 50%;
+  margin: 10px auto;
+}
+
+.user-info {
+  font-size: 14px;
+  color: white;
+}
+
+.user-info p {
+  margin: 2px 0;
+}
+
+.menu-items {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.menu-item {
+  background-color: #f0d9b5; /* Button background color */
+  color: black;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center; /* Ensures text is centered in the link */
+  text-decoration: none; /* Removes underline from links */
+  display: block; /* Ensures links take full width like buttons */
+  box-sizing: border-box; /* Ensures padding doesn't overflow */
+}
+
+.menu-item.logout {
+  background-color: #f29c9c; /* Red background for logout */
+}
+
+.menu-item:hover {
+  background-color: #c9a67c; /* Hover effect */
+}
+
+.close-button {
+  position: fixed; /* Keeps the button floating */
+  top: 20px; /* Adjust to where you want the button */
+  left: 180px; /* Aligns it to the right of the screen */
+  background-color: #161212; /* Button background color */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 2000; /* Ensure the button is above all other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  transition: background-color 0.3s;
+  align-self: flex-start;
 }
 
 .close-button:hover {
-    background-color: #333; /* Darker on hover */
+  background-color: #333; /* Darker color on hover */
 }
+
+.close-button.closed {
+  right: 20px; /* Keep the button position consistent when sidebar is closed */
+}
+x 
 /* Navigation Bar Styles */
 .nav-bar {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    background-color: #f3ebff; /* Light gray background */
-    padding: 20px 0;
-    padding-left: 10px;
-    gap: 15px; /* Adds space between the user greeting and the buttons */
-    width: 100%;
-  }
-  
-  .user-greeting {
-    padding-left: 20px;
-    font-size: 18px;
-    color: #9370db; /* Purple text color */
-  }
-  
-  .nav-buttons {
-    display: flex;
-    gap: 15px; /* Space between buttons */
-    align-items: flex-start;
-  }
-  
-  .nav-button {
-    background-color: #ffa500; /* Orange background */
-    color: #ffffff; /* White text */
-    padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('new.jpg'); /* Add your uploaded image here */
+  background-size: 1920px 1080px; /* Cover the entire nav-bar */
+  background-repeat: no-repeat; /* Ensure it doesn't repeat */
+  padding: 20px 0;
+  padding-left: 10px;
+  gap: 15px; /* Adds space between the user greeting and the buttons */
+  width: 100%; /* Full width of the viewport */
+  /* From https://css.glass */
+backdrop-filter: blur(16.6px);
+-webkit-backdrop-filter: blur(16.6px);
+
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+ 
+margin-left: 300px;
+}
+/* Navigation Buttons */
+.nav-button-home-btn, 
+.nav-button-register-btn, 
+.nav-button-route-btn, 
+.nav-button-reload-btn, 
+.nav-button-sos-btn {
+    height: 60px;
+    border-radius: 20%;
+    width: 110px;
+    background: #3d3a4e;
+    color: #fff;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    align-self: flex-start;
-  }
-  
-  .nav-button:hover {
-    background-color: #ff8c00; /* Darker orange on hover */
-  }
-  
-  /* Specific Button Styles */
-  .home-btn {
-    background-color: #ff4500; /* Red for Home button */
-  }
-  
-  .sos-btn {
-    background-color: #ff4500; /* Red for SOS button */
-  }
-  
-  .sos-btn:hover {
-    background-color: #d73300; /* Darker red on hover */
-  }
-  
-  .route-btn {
-    background-color: #4682b4; /* Blue for Route Details */
-  }
-  
-  .route-btn:hover {
-    background-color: #4169e1; /* Darker blue on hover */
-  }
-  
-  
+    display: flex;
+    align-items: center; /* Vertically centers text */
+    justify-content: center; /* Horizontally centers text */
+    position: relative; /* Ensures hover effect works correctly */
+    text-align: center;
+    transition: all 0.475s;
+    overflow: hidden; /* Ensures no overflow from the hover effect */
+    z-index: 2; /* Keeps the button contents on top */
+    opacity: 80%;
+}
+
+.nav-button-home-btn:hover::before,
+.nav-button-register-btn:hover::before,
+.nav-button-route-btn:hover::before,
+.nav-button-reload-btn:hover::before,
+.nav-button-sos-btn:hover::before {
+    transform: scaleX(1); /* Ensures the hover background expands */
+}
+
+/* Default state - text color is white */
+.nav-button-home-btn span, 
+.nav-button-register-btn span, 
+.nav-button-route-btn span, 
+.nav-button-reload-btn span, 
+.nav-button-sos-btn span {
+    color: white; /* Text is white by default */
+    z-index: 2; /* Ensure text stays on top */
+    position: relative; /* Ensures it's stacked above the background */
+}
+
+/* Gradient background on hover */
+.nav-button-home-btn::before,
+.nav-button-register-btn::before,
+.nav-button-route-btn::before,
+.nav-button-reload-btn::before,
+.nav-button-sos-btn::before {
+    content: "";
+    position: absolute; /* Positions the gradient over the button */
+    top: 0;
+    left: 0;
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: 0 50%;
+    width: 100%; /* Ensure it covers the entire width */
+    height: 100%; /* Ensure it covers the entire height */
+    border-radius: inherit;
+    background: linear-gradient(
+        82.3deg,
+        rgba(150, 93, 233, 1) 10.8%,
+        rgba(99, 88, 238, 1) 94.3%
+    );
+    transition: all 0.475s;
+    z-index: -1; /* Gradient stays behind the text */
+}
+
+/* Ensuring text stays white when hovered */
+.nav-button-home-btn:hover, 
+.nav-button-register-btn:hover, 
+.nav-button-route-btn:hover, 
+.nav-button-reload-btn:hover, 
+.nav-button-sos-btn:hover {
+    color: white; /* Text stays white on hover */
+}
+
+
+

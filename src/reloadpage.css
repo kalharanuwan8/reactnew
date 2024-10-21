@@ -8,32 +8,6 @@
   padding: 20px; /* Padding */
   width: 100%; /* Full width */
 }
-
-.navbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgb(186, 227, 225); /* Navbar background color */
-  padding: 10px 0;
-}
-
-.nav-button {
-  width: 20%;
-  height: 70px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  text-align: center;
-  margin: 0 5px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.orange-button {
-  background-color: #ffa726; /* Home button color */
-}
-
 .content {
   width: 60%; /* Adjust as needed */
   margin-top: 20px;

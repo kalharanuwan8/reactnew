@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import './EditUser.css';  // Ensure this file has the appropriate styles
-import { Link } from 'react-router-dom';
+    import React, { useState } from 'react';
+    import './EditUser.css';  // Ensure this file has the appropriate styles
+    import './sidebar.css';
+    import { Link } from 'react-router-dom';
 
 function EditUserDetails() {
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -30,9 +31,7 @@ function EditUserDetails() {
                 >
                     <span aria-hidden="true">☰</span> {/* Hamburger menu icon */}
                 </button>
-                <div className="user-greeting">
-                    <span>Hello User...</span>
-                </div>
+                
                 <div className="nav-buttons">
         {/* Link the buttons to their respective paths */}
           <Link to="/homepage" className="nav-button home-btn">Home</Link>

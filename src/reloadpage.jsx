@@ -27,18 +27,14 @@ const WalletReloadPage = () => {
           >
             <span aria-hidden="true">☰</span> {/* Hamburger menu icon */}
           </button>
-
-          <div className="user-greeting">
-            <span>Hello Admin...!</span>
-          </div>
-
+          
           <div className="nav-buttons">
             {/* Link the buttons to their respective paths */}
-            <Link to="/homepage" className="nav-button home-btn">Home</Link>
-            <Link to="/register" className="nav-button register-btn">Register New Passenger/Driver</Link>
-            <Link to="/homepage" className="nav-button route-btn">Route Details</Link>
-            <Link to="/reload" className="nav-button reload-btn">Reload Passenger E-Wallet</Link>
-            <Link to="/sos" className="nav-button sos-btn">SOS</Link>
+            <Link to="/homepage" className="nav-button-home-btn">Home</Link>
+            <Link to="/register" className="nav-button-register-btn">Register New Passenger/Driver</Link>
+            <Link to="/homepage" className="nav-button-route-btn">Route Details</Link>
+            <Link to="/reload" className="nav-button-reload-btn">Reload Passenger E-Wallet</Link>
+            <Link to="/sos" className="nav-button-sos-btn">SOS</Link>
           </div>
         </div>
 

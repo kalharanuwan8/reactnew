@@ -1,22 +1,52 @@
-import React, { useState } from 'react';
-import './Registernew.css';
+import React, { useState, useRef } from 'react';
 import './sidebar.css';
+import './Registernew.css';
 import { Link } from 'react-router-dom';
+import { firestore } from './firebase';
+import { addDoc, collection } from '@firebase/firestore';
 
 function Registernew() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
-  const [isPassenger, setIsPassenger] = useState(true);  // Initialize isPassenger state
+  const [isPassenger, setIsPassenger] = useState(true);
 
   const handleToggleClick = () => {
-    setIsSidebarVisible(prevState => !prevState);
+    setIsSidebarVisible((prevState) => !prevState);
   };
 
   const handlePassengerClick = () => {
-    setIsPassenger(true);  // Switch to Passenger registration
+    setIsPassenger(true);
   };
 
   const handleDriverClick = () => {
-    setIsPassenger(false);  // Switch to Driver registration
+    setIsPassenger(false);
+  };
+
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const idRef = useRef();
+  const contactRef = useRef();
+  const guardianContactRef = useRef(); // For passenger-specific field
+  const ref = collection(firestore, 'Adminreg1');
+
+  const handleRegPassenger = async (e) => {
+    e.preventDefault();
+    // Collect form data
+    const data = {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      id: idRef.current.value,
+      contact: contactRef.current.value,
+      guardianContact: guardianContactRef.current.value,
+      role: 'passenger', // This distinguishes the user as a passenger
+    };
+
+    try {
+      // Add the data to Firestore
+      await addDoc(ref, data);
+      console.log('Passenger registered successfully!');
+    } catch (e) {
+      console.error('Error adding document: ', e);
+    }
   };
 
   return (
@@ -30,21 +60,15 @@ function Registernew() {
           <span aria-hidden="true">☰</span> {/* Hamburger menu icon */}
         </button>
 
-        <div className="user-greeting">
-          <span>Hello Admin...!</span>
-        </div>
-
         <div className="nav-buttons">
-        {/* Link the buttons to their respective paths */}
-          <Link to="/homepage" className="nav-button home-btn">Home</Link>
-          <Link to="/register" className="nav-button register-btn">Register New Passenger/Driver</Link>
-          <Link to="/homepage" className="nav-button route-btn">Route Details</Link>
-          <Link to="/reload" className="nav-button reload-btn">Reload Passenger E-Wallet</Link>
-          <Link to="/sos" className="nav-button sos-btn">SOS</Link>
+          <Link to="/homepage" className="nav-button-home-btn">Home</Link>
+          <Link to="/register" className="nav-button-register-btn">Register New User</Link>
+          <Link to="/homepage" className="nav-button-route-btn">Route Details</Link>
+          <Link to="/reload" className="nav-button-reload-btn">Reload</Link>
+          <Link to="/sos" className="nav-button-sos-btn">SOS</Link>
         </div>
       </div>
 
-      {/* Updated: Single button container for both passenger and driver */}
       <div className="button-container">
         <button
           className={`register-toggle ${isPassenger ? 'active' : ''}`}
@@ -60,17 +84,23 @@ function Registernew() {
         </button>
       </div>
 
-      {/* Form Section */}
       <div className="form-container">
-        <input type="text" placeholder="Full Name" className="input-field" />
-        <input type="email" placeholder="Email" className="input-field" />
-        <input type="text" placeholder="Student / Staff ID" className="input-field" />
-        <input type="text" placeholder="Contact No." className="input-field" />
+        <input type="text" placeholder="Full Name" className="input-field" ref={nameRef} />
+        <input type="email" placeholder="Email" className="input-field" ref={emailRef} />
+        <input type="text" placeholder="Student / Staff ID" className="input-field" ref={idRef} />
+        <input type="text" placeholder="Contact No." className="input-field" ref={contactRef} />
 
         {isPassenger ? (
           <>
-            <input type="text" placeholder="Guardian's Contact No." className="input-field" />
-            <button className="register-button">Register as Passenger</button>
+            <input
+              type="text"
+              placeholder="Guardian's Contact No."
+              className="input-field"
+              ref={guardianContactRef}
+            />
+            <button className="register-button" onClick={handleRegPassenger}>
+              Register as Passenger
+            </button>
           </>
         ) : (
           <>
@@ -81,10 +111,9 @@ function Registernew() {
         )}
       </div>
 
-      {/* Sidebar: Conditional rendering based on state */}
       {isSidebarVisible && (
         <div className="sidebar visible">
-          <button className="close-button" onClick={handleToggleClick}>×</button> {/* Close button */}
+          <button className="close-button" onClick={handleToggleClick}>×</button>
 
           <div className="logo-section">
             <img src="logo.png" alt="E-Shuttle Logo" className="logo" />

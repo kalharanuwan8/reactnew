@@ -15,13 +15,13 @@ html, body {
 }
 
 .sos-page-container {
-  background-color: #46e0f4; /* Light blue background for the whole page */
   height: 100vh; /* Full viewport height */
   width: 100vw; /* Full viewport width */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background-image: url('new.jpg');
 }
 
 .nav-bar {

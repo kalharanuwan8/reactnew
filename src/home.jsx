@@ -21,22 +21,20 @@ function Homepage() {
           <span aria-hidden="true">☰</span> {/* Hamburger menu icon */}
         </button>
 
-        <div className="user-greeting">
-          <span>Hello Admin...!</span>
-        </div>
-
         <div className="nav-buttons">
         {/* Link the buttons to their respective paths */}
-          <Link to="/homepage" className="nav-button home-btn">Home</Link>
-          <Link to="/register" className="nav-button register-btn">Register New Passenger/Driver</Link>
-          <Link to="/homepage" className="nav-button route-btn">Route Details</Link>
-          <Link to="/reload" className="nav-button reload-btn">Reload Passenger E-Wallet</Link>
-          <Link to="/sos" className="nav-button sos-btn">SOS</Link>
+          <Link to="/homepage" className="nav-button-home-btn">Home</Link>
+          <Link to="/register" className="nav-button-register-btn">Register New User</Link>
+          <Link to="/homepage" className="nav-button-route-btn">Route Details</Link>
+          <Link to="/reload" className="nav-button-reload-btn">Reload</Link>
+          <Link to="/sos" className="nav-button-sos-btn">SOS</Link>
         </div>
       </div>
 
+      
+
       <div className="content-area">
-        <h2>Current status of the E-Shuttle</h2>
+      Current status of the E-Shuttle
         <div className="status-cards">
           <div className="status-card">No. of Passengers: 14</div>
           <div className="status-card">No. of Drivers: 5</div>
@@ -70,7 +68,7 @@ function Homepage() {
        <div className="menu-items">
          <button className="menu-item">User Management</button>
          <Link to = "/busmanagement" className='menu-item'>Bus and Route Management</Link>
-         <button className="menu-item">Notification Management</button>
+         <Link to = "/notification" className='menu-item'>Notification Management</Link>
          <button className="menu-item">Refund Management</button>
          <Link to = "/myprofile" className="menu-item">Settings</Link>
          <button className="menu-item logout">Log Out</button>
